@@ -1,7 +1,7 @@
-PUT http://localhost:8888/books/book
+POST http://localhost:8888/books/book
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InN1d2FuQG5hdmVyLmNvbSIsImF1dGgiOlt7InVzZXJJZCI6MSwiYXV0aG9yaXR5IjoiVVNFUiJ9XSwiaWF0IjoxNzAxMTk4MTQ0LCJleHAiOjE3MDEyMDE3NDR9.zO0TdpfHtUGZ4mbEQN4lXbpL_LVEwG6rZr5nLj5SAO0
 
 {
-  "isbn": "2627554875"
+  "isbn": "6503418426"
 }

@@ -2,10 +2,10 @@ POST http://localhost:8888/join
 Content-Type: application/json
 
 {
-  "email": "suwan@naver.com",
-  "password": "suwan",
+  "email": "duwan@naver.com",
+  "password": "duwan",
   "lastName": "이",
-  "firstName": "수완",
-  "address": "충남 당진",
+  "firstName": "두완",
+  "address": "충남 서울",
   "phone": "01071962013"
 }
