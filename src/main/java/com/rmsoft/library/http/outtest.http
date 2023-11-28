@@ -1,12 +1,7 @@
-POST http://localhost:8888/books
+PUT http://localhost:8888/books/book
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InN1d2FuQG5hdmVyLmNvbSIsImF1dGgiOlt7InVzZXJJZCI6MSwiYXV0aG9yaXR5IjoiVVNFUiJ9XSwiaWF0IjoxNzAxMTk4MTQ0LCJleHAiOjE3MDEyMDE3NDR9.zO0TdpfHtUGZ4mbEQN4lXbpL_LVEwG6rZr5nLj5SAO0
 
-
 {
-  "title": "취업? 할 수 있다.",
-  "author": "suwan",
-  "publisher": "취업출판사",
-  "bookDescription": "이건 나의 취업이야기를 다뤘다.",
-  "publishingDate": "2023-12-01"
+  "isbn": "2627554875"
 }

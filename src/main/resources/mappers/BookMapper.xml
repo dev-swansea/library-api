@@ -61,9 +61,4 @@
         where book_id = #{bookId}
     </update>
 
-    <update id="updateState">
-        update book_tbl
-        set state = #{state}
-    </update>
-
 </mapper>

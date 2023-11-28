@@ -32,8 +32,10 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .cors(cors -> cors.disable())
             .authorizeHttpRequests(request ->
-                    request.requestMatchers(HttpMethod.POST, "/join", "/login").permitAll()
-                            .requestMatchers("/books", "/books/**").authenticated())
+                    request.requestMatchers(HttpMethod.POST, "/books", "/books/**").authenticated()
+                            .requestMatchers(HttpMethod.PUT, "/books", "/books/**").authenticated()
+                            .requestMatchers(HttpMethod.PATCH, "/books", "/books/**").authenticated()
+                            .requestMatchers("/**").permitAll())
             .addFilterBefore(new JwtTokenFilter(userService, secretKey), UsernamePasswordAuthenticationFilter.class)
             .sessionManagement(session ->
                     session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

@@ -1,7 +1,7 @@
 package com.rmsoft.library.service;
 
+import com.rmsoft.library.domain.Book;
 import com.rmsoft.library.domain.dto.BookRequest;
-import com.rmsoft.library.domain.dto.BookResponse;
 import com.rmsoft.library.domain.dto.BookUpdateDto;
 import com.rmsoft.library.mappers.BookMapper;
 import lombok.RequiredArgsConstructor;
@@ -17,15 +17,15 @@ public class BookService {
 
   private final BookMapper bookMapper;
 
-  public List<BookResponse> findAll() {
+  public List<Book> findAll() {
     return bookMapper.selectAll();
   }
 
-  public BookResponse findBookByTitle(String title) {
+  public Book findBookByTitle(String title) {
     return bookMapper.selectBookByTitle(title.replaceAll(" ", ""));
   }
 
-  public BookResponse findBookByIsbn(String isbn) {
+  public Book findBookByIsbn(String isbn) {
     return bookMapper.selectBookByIsbn(isbn);
   }
 
@@ -40,9 +40,6 @@ public class BookService {
     bookMapper.updateBook(bookUpdateDto);
   }
 
-  public void updateStatus(int flag) {
-    bookMapper.updateState(flag);
-  }
 
   private int[] makeIsbnNum() {
     int[] oneToTen = new int[10];

@@ -1,4 +1,4 @@
-POST http://localhost:8888/users
+POST http://localhost:8888/join
 Content-Type: application/json
 
 {
@@ -6,6 +6,6 @@ Content-Type: application/json
   "password": "suwan",
   "lastName": "이",
   "firstName": "수완",
-  "address": "충남 당신",
+  "address": "충남 당진",
   "phone": "01071962013"
 }

@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @Setter
 @Alias("BookUpdateDto")
 public class BookUpdateDto {
-  private int bookId;
+  private Long bookId;
   private String title;
   private String author;
   private String publisher;

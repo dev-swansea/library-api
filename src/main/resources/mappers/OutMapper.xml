@@ -4,8 +4,20 @@
 <mapper namespace="com.rmsoft.library.mappers.OutMapper">
 
     <insert id="insertOut">
-        insert into out_book (out_date, return_date, user_id, book_id)
-        values (now(), null, #{userId}, #{bookId})
+        insert into out_tbl (out_date, return_date, email, user_id, book_id)
+        values (now(), date_add(now(),INTERVAL 14 DAY), #{email}, #{userId}, #{bookId})
     </insert>
+
+    <update id="updateReturnDate">
+        update out_tbl
+        set return_date = now()
+        where book_id = #{bookId}
+    </update>
+
+    <update id="updateState">
+        update book_tbl
+        set state = #{state}
+        where book_id = #{bookId}
+    </update>
 
 </mapper>

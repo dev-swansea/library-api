@@ -1,16 +1,20 @@
 package com.rmsoft.library.domain.dto;
 
+import com.rmsoft.library.domain.Out;
 import lombok.NoArgsConstructor;
 import org.apache.ibatis.type.Alias;
 
 import java.time.LocalDate;
 
-@NoArgsConstructor
-@Alias("OutResponse")
+
 public class OutResponse {
-  private int outId;
   private LocalDate outDate;
   private LocalDate returnDete;
-  private int userId;
-  private int bookId;
+  private String email;
+
+  public OutResponse(Out out) {
+    this.outDate = out.getOutDate();
+    this.returnDete = out.getReturnDete();
+    this.email = out.getEmail();
+  }
 }

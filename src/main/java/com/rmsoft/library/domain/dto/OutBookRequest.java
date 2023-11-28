@@ -2,10 +2,10 @@ package com.rmsoft.library.domain.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
-@AllArgsConstructor
 @Getter
+@Setter
 public class OutBookRequest {
-  private String email;
   private String isbn;
 }

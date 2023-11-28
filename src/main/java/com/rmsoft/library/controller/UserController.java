@@ -22,12 +22,24 @@ public class UserController {
   private final UserService userService;
   private final PasswordEncoder passwordEncoder;
 
+  /**
+   * 회원가입
+   *
+   * @param request UserJoinRequest
+   * @return UserJoinResponse
+   */
   @PostMapping("/join")
   public ResponseEntity<UserJoinResponse> join(@RequestBody UserJoinRequest request) {
     User user = userService.join(request.toEntity(passwordEncoder.encode(request.getPassword())));
     return ResponseEntity.ok().body(new UserJoinResponse(user));
   }
 
+  /**
+   * 로그인
+   *
+   * @param request UserLoginRequest
+   * @return token
+   */
   @PostMapping("/login")
   public ResponseEntity<UserLoginResponse> login(@RequestBody UserLoginRequest request) {
     String token = userService.login(request.getEmail(), request.getPassword());

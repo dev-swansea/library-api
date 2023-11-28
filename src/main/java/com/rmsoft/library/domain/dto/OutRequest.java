@@ -1,13 +1,20 @@
 package com.rmsoft.library.domain.dto;
 
+import com.rmsoft.library.domain.Out;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import org.apache.ibatis.type.Alias;
 
 import java.time.LocalDate;
 
 @AllArgsConstructor
-@Alias("OutRequest")
+@Getter
 public class OutRequest {
-  private int userId;
-  private int bookId;
+  private String email;
+  private Long userId;
+  private Long bookId;
+
+  public Out toEntity() {
+    return new Out(email, userId, bookId);
+  }
 }

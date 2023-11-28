@@ -4,12 +4,10 @@ import com.rmsoft.library.domain.User;
 import com.rmsoft.library.service.UserService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
@@ -56,11 +54,12 @@ public class JwtTokenFilter extends OncePerRequestFilter {
     String userEmail = JwtTokenUtil.getUserEmail(extractClaim(token, secreyKey));
     User user = userService.findUserByEmail(userEmail);
 
-    UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(user.getUserId(), null, List.of(new SimpleGrantedAuthority(user.getAuthList().get(0).toString())));
+    UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(List.of(user.getUserId(), user.getEmail()), null, List.of(new SimpleGrantedAuthority(user.getAuthList().get(0).getAuthority())));
 
     authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
     SecurityContextHolder.getContext().setAuthentication(authenticationToken);
+
 
     filterChain.doFilter(request, response);
   }

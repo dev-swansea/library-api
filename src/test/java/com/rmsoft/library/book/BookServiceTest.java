@@ -1,5 +1,6 @@
 package com.rmsoft.library.book;
 
+import com.rmsoft.library.domain.Book;
 import com.rmsoft.library.domain.dto.BookRequest;
 import com.rmsoft.library.domain.dto.BookResponse;
 import com.rmsoft.library.mappers.BookMapper;
@@ -20,7 +21,7 @@ class BookServiceTest {
 
   @Test
   public void findTest() {
-    BookResponse 윗집애 = bookMapper.selectBookByTitle("윗집애");
+    Book 윗집애 = bookMapper.selectBookByTitle("윗집애");
     System.out.println(윗집애.getPublishingDate());
   }
 
