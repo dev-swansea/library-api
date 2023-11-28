@@ -1,0 +1,69 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rmsoft.library.mappers.BookMapper">
+
+
+    <resultMap id="bookMap" type="com.rmsoft.library.domain.Book">
+        <id property="bookId" column="book_id"/>
+        <result property="isbn" column="isbn"/>
+        <result property="title" column="title"/>
+        <result property="author" column="author"/>
+        <result property="publisher" column="publisher"/>
+        <result property="bookDescription" column="book_description"/>
+        <result property="publishingDate" column="publishing_date"/>
+        <result property="state" column="state"/>
+        <collection property="classification" resultMap="cMap"/>
+    </resultMap>
+
+    <resultMap id="cMap" type="com.rmsoft.library.domain.Classification">
+        <id property="cId" column="c_id"/>
+        <result property="cName" column="c_name"/>
+    </resultMap>
+
+    <select id="selectAll" resultMap="bookMap">
+        select b.book_id, b.isbn, b.title, b.author, b.publisher, b.book_description, b.publishing_date,
+        b.state,
+        c.c_id, c.c_name
+        from book_tbl b join classification_tbl c on b.c_id = c.c_id
+    </select>
+
+    <select id="selectBookByTitle" resultMap="bookMap">
+        select b.book_id, b.isbn, b.title, b.author, b.publisher, b.book_description, b.publishing_date,
+        b.state,
+        c.c_id, c.c_name
+        from book_tbl b join classification_tbl c on b.c_id = c.c_id
+        where replace(title, ' ', '') like concat('%',#{title},'%')
+    </select>
+
+    <select id="selectBookByIsbn" resultMap="bookMap">
+        select b.book_id, b.isbn, b.title, b.author, b.publisher, b.book_description, b.publishing_date,
+        b.state,
+        c.c_id, c.c_name
+        from book_tbl b join classification_tbl c on b.c_id = c.c_id
+        where isbn = #{isbn}
+    </select>
+
+    <insert id="insertBook">
+        insert into book_tbl (c_id, isbn, title, author, publisher, book_description, publishing_date, create_date)
+        values (#{cId}, #{isbn}, #{title}, #{author}, #{publisher}, #{bookDescription}, #{publishingDate}, now()
+        )
+    </insert>
+
+    <update id="updateBook">
+        update book_tbl
+        set
+        <if test="title != null">title = #{title}</if>
+        <if test="author != null">, author = #{author}</if>
+        <if test="publisher != null">, publisher = #{publisher}</if>
+        <if test="bookDescription != null">, book_description = #{bookDescription}</if>
+        <if test="publishingDate != null">, publishing_date = #{publishingDate}</if>
+        where book_id = #{bookId}
+    </update>
+
+    <update id="updateState">
+        update book_tbl
+        set state = #{state}
+    </update>
+
+</mapper>

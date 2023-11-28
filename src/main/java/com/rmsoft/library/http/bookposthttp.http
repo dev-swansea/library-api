@@ -1,0 +1,10 @@
+POST http://localhost:8888/books
+Content-Type: application/json
+
+{
+  "title": "취업? 할 수 있다.",
+  "author": "suwan",
+  "publisher": "취업출판사",
+  "bookDescription": "이건 나의 취업이야기를 다뤘다.",
+  "publishingDate": "2023-12-01"
+}

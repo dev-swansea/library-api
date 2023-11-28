@@ -1,0 +1,4 @@
+GET http://localhost:8888/books
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InN1d2FuQG5hdmVyLmNvbSIsImF1dGgiOlt7InVzZXJJZCI6NCwiYXV0aG9yaXR5IjoiVVNFUiJ9XSwiaWF0IjoxNzAxMTgyNDYxLCJleHAiOjE3MDExODYwNjF9.mNI9cqPSnC7UV0rjGpIsCTpGAaXcWY2XYSA0PofKUQA
+
+

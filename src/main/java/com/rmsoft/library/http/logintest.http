@@ -1,0 +1,7 @@
+POST http://localhost:8888/login
+Content-Type: application/json
+
+{
+  "email": "suwan@naver.com",
+  "password": "suwan"
+}

@@ -1,0 +1,11 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rmsoft.library.mappers.OutMapper">
+
+    <insert id="insertOut">
+        insert into out_book (out_date, return_date, user_id, book_id)
+        values (now(), null, #{userId}, #{bookId})
+    </insert>
+
+</mapper>

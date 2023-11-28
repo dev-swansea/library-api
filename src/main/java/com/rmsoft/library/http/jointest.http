@@ -1,0 +1,11 @@
+POST http://localhost:8888/users
+Content-Type: application/json
+
+{
+  "email": "suwan@naver.com",
+  "password": "suwan",
+  "lastName": "이",
+  "firstName": "수완",
+  "address": "충남 당신",
+  "phone": "01071962013"
+}
