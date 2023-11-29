@@ -28,7 +28,7 @@ public class OutController {
    * 도서를 대출한다.
    *
    * @param request   isbn
-   * @param principal
+   * @param principal principal
    * @return 결과
    */
   @PostMapping("/books/book")
@@ -48,6 +48,10 @@ public class OutController {
     return ResponseEntity.ok().body("대출되었습니다.");
   }
 
+  /**
+   * @param request request
+   * @return 결과
+   */
   @RequestMapping(value = "/books/book", method = {RequestMethod.PUT, RequestMethod.PATCH})
   public ResponseEntity<String> returnBook(@RequestBody OutBookRequest request) {
     Book book = outService.updateOut(request);

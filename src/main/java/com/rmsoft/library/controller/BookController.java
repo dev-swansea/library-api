@@ -48,7 +48,7 @@ public class BookController {
   }
 
   /**
-   * @param request
+   * @param request BookRequest
    * @return 결과
    */
   @PostMapping("/books")
@@ -60,9 +60,9 @@ public class BookController {
   /**
    * 도서 수정
    *
-   * @param title
-   * @param bookUpdateDto
-   * @return
+   * @param title         책 제목
+   * @param bookUpdateDto bookUpdateDto
+   * @return 결과
    */
   @RequestMapping(value = "/books/{title}", method = {RequestMethod.PUT, RequestMethod.PATCH})
   public ResponseEntity<String> updateBook(@PathVariable String title, @RequestBody BookUpdateDto bookUpdateDto) {
