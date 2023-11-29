@@ -22,11 +22,13 @@ public class BookService {
   }
 
   public List<Book> findBookByTitle(String title) {
-    return bookMapper.selectBookByTitle(title.replaceAll(" ", ""));
+    return bookMapper.selectBookByTitle(title.replaceAll(" ", ""))
+            .orElseThrow(() -> new IllegalArgumentException("등록되지 않은 도서입니다."));
   }
 
   public Book findBookByIsbn(String isbn) {
-    return bookMapper.selectBookByIsbn(isbn);
+    return bookMapper.selectBookByIsbn(isbn)
+            .orElseThrow(() -> new IllegalArgumentException("등록되지 않은 도서입니다."));
   }
 
   public void saveBook(BookRequest request) {

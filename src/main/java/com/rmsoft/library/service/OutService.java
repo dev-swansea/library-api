@@ -23,7 +23,8 @@ public class OutService {
   }
 
   public Book updateOut(OutBookRequest request) {
-    Book book = bookMapper.selectBookByIsbn(request.getIsbn());
+    Book book = bookMapper.selectBookByIsbn(request.getIsbn())
+            .orElseThrow(() -> new IllegalArgumentException("등록되지 않은 도서입니다."));
     outMapper.updateState(true, book.getBookId());
     outMapper.updateReturnDate(book.getBookId());
     return book;
