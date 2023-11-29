@@ -1,12 +1,12 @@
 server:
-  port: 8888
+  port: 5000
 spring:
   datasource:
     hikari:
-      jdbc-url: jdbc:log4jdbc:mysql://localhost:3306/library?serverTimezone=Asia/Seoul&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
-      driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-      username: rmsoft
-      password: rmsoft
+      jdbc-url: jdbc:log4jdbc:mysql://${RDS_HOSTNAME:localhost}:${RDS_PORT:3306}/${RDS_DB_NAME:ebdb}
+      #      driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+      username: ${RDS_USERNAME:suwanrmsoft}
+      password: ${RDS_PASSWORD:suwanrmsoft}
 jwt:
   issuer: rmsoft
   secret-key: library

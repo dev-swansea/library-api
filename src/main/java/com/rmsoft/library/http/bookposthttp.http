@@ -1,7 +1,6 @@
-POST http://localhost:8888/books
+POST http://my-first-beanstalk-env.eba-pmcxn6hf.ap-northeast-2.elasticbeanstalk.com/books
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InN1d2FuQG5hdmVyLmNvbSIsImF1dGgiOlt7InVzZXJJZCI6MSwiYXV0aG9yaXR5IjoiVVNFUiJ9XSwiaWF0IjoxNzAxMTk4MTQ0LCJleHAiOjE3MDEyMDE3NDR9.zO0TdpfHtUGZ4mbEQN4lXbpL_LVEwG6rZr5nLj5SAO0
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImR1d2FuQG5hdmVyLmNvbSIsImF1dGgiOlt7InVzZXJJZCI6MSwiYXV0aG9yaXR5IjoiVVNFUiJ9XSwiaWF0IjoxNzAxMjU2MzQ4LCJleHAiOjE3MDEyNTk5NDh9.tqD0LuO4ln0dwIuqgGDyLlgqvi2ulUlHvfm4Wd_rOxM
 
 {
   "title": "취업? 할 수 있다.",

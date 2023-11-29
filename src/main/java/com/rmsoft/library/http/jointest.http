@@ -1,4 +1,4 @@
-POST http://localhost:8888/join
+POST http://my-first-beanstalk-env.eba-pmcxn6hf.ap-northeast-2.elasticbeanstalk.com/join
 Content-Type: application/json
 
 {

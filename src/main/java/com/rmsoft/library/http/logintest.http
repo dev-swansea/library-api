@@ -1,4 +1,4 @@
-POST http://localhost:8888/login
+POST http://my-first-beanstalk-env.eba-pmcxn6hf.ap-northeast-2.elasticbeanstalk.com/login
 Content-Type: application/json
 
 {

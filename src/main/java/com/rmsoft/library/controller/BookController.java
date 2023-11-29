@@ -49,7 +49,7 @@ public class BookController {
 
   /**
    * @param request
-   * @return
+   * @return 결과
    */
   @PostMapping("/books")
   public ResponseEntity<String> saveBook(@RequestBody BookRequest request) {
