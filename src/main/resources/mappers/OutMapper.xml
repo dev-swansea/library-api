@@ -12,6 +12,7 @@
         update out_tbl
         set return_date = now()
         where book_id = #{bookId}
+        and email = #{email}
     </update>
 
     <update id="updateState">

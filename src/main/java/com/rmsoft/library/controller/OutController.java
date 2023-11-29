@@ -4,11 +4,13 @@ import com.rmsoft.library.domain.Book;
 import com.rmsoft.library.domain.dto.BookResponse;
 import com.rmsoft.library.domain.dto.OutBookRequest;
 import com.rmsoft.library.domain.dto.OutRequest;
+import com.rmsoft.library.domain.dto.OutResponse;
 import com.rmsoft.library.jwt.JwtTokenUtil;
 import com.rmsoft.library.service.BookService;
 import com.rmsoft.library.service.OutService;
 import com.rmsoft.library.service.UserService;
 import io.jsonwebtoken.Jwts;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -49,6 +51,8 @@ public class OutController {
   }
 
   /**
+   * 도서를 반납한다.
+   *
    * @param request request
    * @return 결과
    */

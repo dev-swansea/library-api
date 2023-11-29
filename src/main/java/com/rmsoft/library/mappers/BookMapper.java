@@ -12,7 +12,7 @@ public interface BookMapper {
 
   List<Book> selectAll();
 
-  Book selectBookByTitle(String title);
+  List<Book> selectBookByTitle(String title);
 
   Book selectBookByIsbn(String isbn);
 

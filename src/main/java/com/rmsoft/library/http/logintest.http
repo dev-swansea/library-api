@@ -2,6 +2,6 @@ POST http://my-first-beanstalk-env.eba-pmcxn6hf.ap-northeast-2.elasticbeanstalk.
 Content-Type: application/json
 
 {
-  "email": "suwan@naver.com",
-  "password": "suwan"
+  "email": "duwan@naver.com",
+  "password": "duwan"
 }

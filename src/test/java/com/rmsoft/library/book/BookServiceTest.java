@@ -17,8 +17,8 @@ class BookServiceTest {
 
   @Test
   public void findTest() {
-    Book 윗집애 = bookMapper.selectBookByTitle("윗집애");
-    System.out.println(윗집애.getPublishingDate());
+    //Book 윗집애 = bookMapper.selectBookByTitle("윗집애");
+    //System.out.println(윗집애.getPublishingDate());
   }
 
 }

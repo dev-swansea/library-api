@@ -21,7 +21,7 @@ public class BookService {
     return bookMapper.selectAll();
   }
 
-  public Book findBookByTitle(String title) {
+  public List<Book> findBookByTitle(String title) {
     return bookMapper.selectBookByTitle(title.replaceAll(" ", ""));
   }
 

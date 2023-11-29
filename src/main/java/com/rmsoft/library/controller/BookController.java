@@ -36,14 +36,30 @@ public class BookController {
   }
 
   /**
-   * 특정 도서 검색
+   * 특정 도서 제목으로 검색
    *
    * @param title 책 제목
    * @return 특정 도서
    */
   @GetMapping("/books/{title}")
-  public ResponseEntity<BookResponse> findBookByTitle(@PathVariable String title) {
-    Book book = bookService.findBookByTitle(title);
+  public ResponseEntity<List<BookResponse>> findBookByTitle(@PathVariable String title) {
+    List<Book> books = bookService.findBookByTitle(title);
+    List<BookResponse> response = new ArrayList<>();
+    books.forEach(e -> {
+      response.add(new BookResponse(e));
+    });
+    return ResponseEntity.ok().body(response);
+  }
+
+  /**
+   * 도서에 대한 개별 정보 확인
+   *
+   * @param isbn isbn
+   * @return BookResponse
+   */
+  @GetMapping("/books/book/{isbn}")
+  public ResponseEntity<BookResponse> findBookByIsbn(@PathVariable String isbn) {
+    Book book = bookService.findBookByIsbn(isbn);
     return ResponseEntity.ok().body(new BookResponse(book));
   }
 
@@ -62,13 +78,13 @@ public class BookController {
   /**
    * 도서 수정
    *
-   * @param title         책 제목 => 필수
+   * @param isbn          책 제목 => 필수
    * @param bookUpdateDto bookUpdateDto
    * @return 결과
    */
-  @RequestMapping(value = "/books/{title}", method = {RequestMethod.PUT, RequestMethod.PATCH})
-  public ResponseEntity<String> updateBook(@PathVariable String title, @RequestBody BookUpdateDto bookUpdateDto) {
-    Book book = bookService.findBookByTitle(title);
+  @RequestMapping(value = "/books/{isbn}", method = {RequestMethod.PUT, RequestMethod.PATCH})
+  public ResponseEntity<String> updateBook(@PathVariable String isbn, @RequestBody BookUpdateDto bookUpdateDto) {
+    Book book = bookService.findBookByIsbn(isbn);
     bookUpdateDto.setBookId(book.getBookId());
     bookService.updateBook(bookUpdateDto);
     return ResponseEntity.ok().body("수정되었습니다.");
