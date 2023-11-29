@@ -48,6 +48,8 @@ public class BookController {
   }
 
   /**
+   * 도서 저장
+   *
    * @param request BookRequest
    * @return 결과
    */
@@ -60,7 +62,7 @@ public class BookController {
   /**
    * 도서 수정
    *
-   * @param title         책 제목
+   * @param title         책 제목 => 필수
    * @param bookUpdateDto bookUpdateDto
    * @return 결과
    */
@@ -68,7 +70,6 @@ public class BookController {
   public ResponseEntity<String> updateBook(@PathVariable String title, @RequestBody BookUpdateDto bookUpdateDto) {
     Book book = bookService.findBookByTitle(title);
     bookUpdateDto.setBookId(book.getBookId());
-    bookUpdateDto.setTitle(title);
     bookService.updateBook(bookUpdateDto);
     return ResponseEntity.ok().body("수정되었습니다.");
   }

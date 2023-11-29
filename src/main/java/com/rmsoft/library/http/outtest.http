@@ -1,7 +1,7 @@
-POST http://localhost:8888/books/book
+POST http://my-first-beanstalk-env.eba-pmcxn6hf.ap-northeast-2.elasticbeanstalk.com/books/book
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InN1d2FuQG5hdmVyLmNvbSIsImF1dGgiOlt7InVzZXJJZCI6MSwiYXV0aG9yaXR5IjoiVVNFUiJ9XSwiaWF0IjoxNzAxMTk4MTQ0LCJleHAiOjE3MDEyMDE3NDR9.zO0TdpfHtUGZ4mbEQN4lXbpL_LVEwG6rZr5nLj5SAO0
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InN1d2FuQG5hdmVyLmNvbSIsImF1dGgiOlt7InVzZXJJZCI6MiwiYXV0aG9yaXR5IjoiVVNFUiJ9XSwiaWF0IjoxNzAxMjY2NzU0LCJleHAiOjE3MDEyNzAzNTR9.OBVfTKckqPM8E_o0E-kvCR0-ddvWjquh7QHzJ-x9gDE
 
 {
-  "isbn": "6503418426"
+  "isbn": "1222417588"
 }
