@@ -45,4 +45,5 @@ public class UserController {
     String token = userService.login(request.getEmail(), request.getPassword());
     return ResponseEntity.ok().body(new UserLoginResponse(token));
   }
+
 }

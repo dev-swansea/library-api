@@ -40,7 +40,6 @@ public class BookService {
     bookMapper.updateBook(bookUpdateDto);
   }
 
-
   private int[] makeIsbnNum() {
     int[] oneToTen = new int[10];
     if (!checkIsbnNum(oneToTen)) {

@@ -1,9 +1,9 @@
-POST http://my-first-beanstalk-env.eba-pmcxn6hf.ap-northeast-2.elasticbeanstalk.com/join
+POST http://localhost:8888/join
 Content-Type: application/json
 
 {
-  "email": "suwan@naver.com",
-  "password": "suwan",
+  "email": "quwan@naver.com",
+  "password": "quwan",
   "lastName": "이",
   "firstName": "수완",
   "address": "충남 보령",

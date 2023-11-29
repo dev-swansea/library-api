@@ -18,6 +18,6 @@ public class UserJoinRequest {
   private LocalDate createDate;
 
   public User toEntity(String password) {
-    return new User(email, password, lastName, firstName, address, phone, createDate);
+    return new User(email, password, lastName, firstName, address, phone);
   }
 }

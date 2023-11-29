@@ -27,23 +27,13 @@ public class User {
 
   private List<Authentication> authList;
 
-  public User(String email, String password, String lastName, String firstName, String address, String phone, LocalDate createDate) {
+  public User(String email, String password, String lastName, String firstName, String address, String phone) {
     this.email = email;
     this.password = password;
     this.lastName = lastName;
     this.firstName = firstName;
     this.address = address;
     this.phone = phone;
-    this.createDate = createDate;
   }
 
-  public User(UserJoinRequest request) {
-    this.email = request.getEmail();
-    this.password = request.getPassword();
-    this.lastName = request.getLastName();
-    this.firstName = request.getFirstName();
-    this.address = request.getAddress();
-    this.phone = request.getPhone();
-    this.createDate = request.getCreateDate();
-  }
 }

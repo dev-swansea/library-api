@@ -7,6 +7,7 @@ import com.rmsoft.library.domain.dto.BookUpdateDto;
 import com.rmsoft.library.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
