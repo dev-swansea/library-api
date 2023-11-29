@@ -1,8 +1,9 @@
 #POST http://my-first-beanstalk-env.eba-pmcxn6hf.ap-northeast-2.elasticbeanstalk.com/books/book
 POST http://localhost:8888/books/book
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImR1d2FuQG5hdmVyLmNvbSIsImF1dGgiOlt7InVzZXJJZCI6MSwiYXV0aG9yaXR5IjoiVVNFUiJ9XSwiaWF0IjoxNzAxMjcxNjkwLCJleHAiOjE3MDEyNzUyOTB9.eVI1YdjN3ihnPAnsy5cZIdEU0jKaMtEmHF3S7ykKAlw
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImR1d2FuQG5hdmVyLmNvbSIsImF1dGgiOlt7InVzZXJJZCI6MSwiYXV0aG9yaXR5IjoiVVNFUiJ9XSwiaWF0IjoxNzAxMjc4NjU1LCJleHAiOjE3MDEyODIyNTV9.RN6fdCWydkuvSabh-ij-qT3jy7NQWEhG_lDZ3c6KzA8
 
 {
-  "isbn": "1222417588"
+  "email": "duwan@naver.com",
+  "isbn": "6196283421"
 }

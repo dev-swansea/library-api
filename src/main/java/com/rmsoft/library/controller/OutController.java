@@ -35,8 +35,14 @@ public class OutController {
    */
   @PostMapping("/books/book")
   public ResponseEntity<String> outBook(@RequestBody OutBookRequest request, Principal principal) {
+
+
     Book book = bookService.findBookByIsbn(request.getIsbn());
     String[] principalArr = principal.getName().replaceAll("[\\[\\]]", "").split(",");
+
+    if (!request.getEmail().equals(principalArr[1].trim())) {
+      throw new IllegalArgumentException("아이디를 확인해주세요");
+    }
 
     if (book == null) {
       return ResponseEntity.badRequest().body("해당 도서가 없습니다.");

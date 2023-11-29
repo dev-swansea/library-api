@@ -7,5 +7,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class OutBookRequest {
+  private String email;
   private String isbn;
 }
